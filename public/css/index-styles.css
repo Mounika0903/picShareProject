@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.header-button {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #0056b3; 
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.header-button:hover {
+    background-color: #004494; 
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.photo {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 1rem); 
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.photo img {
+    width: 70%;
+    height: 300px; 
+    object-fit: cover; 
+}
+
+.photo-details {
+    padding: 1rem;
+    flex: 1; 
+}
+
+.photo-details p {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.photo-details strong {
+    display: block;
+    color: #007bff;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .photo {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .photo {
+        width: 100%;
+    }
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}

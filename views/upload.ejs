@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/upload-styles.css">
+  <title>Upload Photo</title>
+</head>
+<body>
+  <section class="upload-form">
+    <header>
+        <h1>Upload a Photo here..</h1>
+      </header>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="image">Photo:</label>
+        <input type="file" name="image" id="image" required height="100px" width="100px">
+      </div>
+      
+      <% if (errors && errors.length > 0) { %>
+        <ul class="error-list">
+          <% errors.forEach(error => { %>
+            <li class="error-message"><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+      
+      <button type="submit" class="submit-btn">Upload</button>
+    </form>
+  </section>
+</body>
+</html>

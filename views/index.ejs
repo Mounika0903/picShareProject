@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index-styles.css">
+  <title>PicShare Gallery</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Gallery</h1>
+  </header>
+  <a href="/upload" class="header-button">Upload Photo</a>
+
+  <main>
+    <section class="gallery">
+      <% if (photos.length > 0) { %>
+        <% photos.forEach(photo => { %>
+          <div class="photo">
+            <img src="/images/<%= photo.filename %>" alt="<%= photo.title %>">
+            <div class="photo-details">
+              <p><strong>Name:</strong> <%= photo.title %></p>
+              <p><strong>Description:</strong> <%= photo.description %></p>
+              <p><strong>Filename:</strong> <%= photo.filename %></p>
+              <form action="/delete/<%= photo._id %>" method="POST">
+                <button type="submit" class="delete-btn">Delete</button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>No photos available.</p>
+      <% } %>
+    </section>
+  </main>
+</body>
+</html>
